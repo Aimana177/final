@@ -7,67 +7,83 @@
     tools:context=".MainActivitySearch">
 
     <LinearLayout
-        android:layout_width="418dp"
-        android:layout_height="69dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        android:id="@+id/linear_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="51dp"
-            android:layout_height="45dp"
-            android:src="@drawable/home" />
-
-        <TextView
-            android:id="@+id/textView"
+            android:id="@+id/icon_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Home"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:contentDescription="@string/home_name"
+            app:srcCompat="@drawable/home" />
+        <LinearLayout
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="start"
+            android:layout_marginStart="20sp">
+
+            <TextView
+                android:id="@+id/Home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/name"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_name" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_marginStart="60dp"
+            android:id="@+id/imageView2"
+            android:contentDescription="select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/Like" />
 
     </LinearLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/menu"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/search_badge"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu">
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_name"
+        android:orientation="horizontal"
+        android:gravity="center">
 
-    <SearchView
-        android:layout_width="325dp"
-        android:layout_height="38dp"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="134dp" />
+        <EditText
+            android:layout_width="325dp"
+            android:layout_height="40dp"
+            android:autofillHints="name"
+            android:hint="search"
+            android:inputType="textMultiLine"
+            android:textColor="@color/black"></EditText>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="21-42-34, Banjara Hills, Hyder...."
-        android:textColor="@color/black"
-        android:textStyle="italic"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="95dp" />
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/select" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name:     User 1"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="228dp" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
